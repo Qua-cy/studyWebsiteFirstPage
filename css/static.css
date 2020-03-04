@@ -1,0 +1,530 @@
+/* 
+BEM 设计模式
+
+模块 （没有前缀，多个单词用 — 连接）
+元素 （元素在模块之后，可以有多个层级，以 _ 连接）
+修饰 （某元素或者某模块的特别状态，必须有一个状态名和状态值，使用 _ 连接）
+
+*/
+
+
+/* 全局初始样式定义 */
+
+* {
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+i {
+    font-style: normal;
+}
+
+
+/* 导航条样式 */
+
+.header,
+.header_status_change {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.header_wrap {
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+.header_logo {
+    width: 160px;
+    height: 40px;
+    text-indent: 50px;
+    background: url(../img/logo.png) no-repeat left center;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+.header_logo i {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.header_logo:hover i {
+    color: #f00;
+}
+
+.header_nav {
+    position: absolute;
+    height: 40px;
+    right: 20px;
+    top: 50%;
+    margin-top: -20px;
+}
+
+.header_nav-item {
+    display: block;
+    float: left;
+    padding-left: 30px;
+    line-height: 40px;
+}
+
+.header_nav-item_study_button {
+    padding: 0;
+    display: block;
+    width: 90px;
+    color: #fff;
+    background-color: #f00;
+    text-align: center;
+    margin-left: 30px;
+    border-radius: 3px;
+}
+
+.header_nav-item_study_button:hover {
+    background-color: rgb(194, 3, 3);
+    box-shadow: 0 0 10px #f00;
+}
+
+.header_nav-tip {
+    position: absolute;
+    width: 64px;
+    height: 2px;
+    background-color: #f00;
+    bottom: 0;
+    left: 30px;
+    transition: all .5s;
+}
+
+
+/* 第一屏样式 */
+
+.screen-1 {
+    width: 100%;
+    height: 640px;
+    background: url(../img/sc1.jpg) no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.screen-1_wrap {
+    width: 1200px;
+    height: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.screen-1_heading {
+    width: 500px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -250px;
+}
+
+.screen-1_subheading {
+    width: 500px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    top: 285px;
+    left: 50%;
+    margin-left: -250px;
+}
+
+
+/* 第二屏样式 */
+
+.screen-2 {
+    height: 640px;
+    background-color: #f3f5f7;
+    overflow: hidden;
+}
+
+.screen-2_wrap {
+    width: 1200px;
+    height: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.screen-2_heading {
+    color: #07111b;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.screen-2_line {
+    width: 50px;
+    height: 2px;
+    background-color: #f00;
+    margin: 30px auto 0;
+}
+
+.screen-2_subheading {
+    color: #07111b;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.screen-2_bat {
+    width: 750px;
+    height: 361px;
+    background: url(../img/sc2.png) no-repeat center;
+    position: absolute;
+    left: 50%;
+    margin-left: -375px;
+    bottom: 0;
+}
+
+.screen-2_people {
+    width: 275px;
+    height: 380px;
+    background: url(../img/sc2-1.png) no-repeat center;
+    position: absolute;
+    left: 50%;
+    margin-left: -138px;
+    bottom: 0;
+    z-index: 2;
+}
+
+.screen-2_rocket {
+    width: 266px;
+    height: 205px;
+    background: url(../img/sc2-2.png) no-repeat center;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    bottom: 100px;
+    z-index: 1;
+}
+
+
+/* 第三屏样式 */
+
+.screen-3 {
+    height: 640px;
+    background-color: #2b333b;
+    overflow: hidden;
+}
+
+.screen-3_wrap {
+    width: 1200px;
+    height: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.screen-3_decorate {
+    width: 462px;
+    height: 510px;
+    background: url(../img/sc3.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 65px;
+}
+
+.screen-3_heading {
+    position: absolute;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    top: 230px;
+    left: 684px;
+}
+
+.screen-3_line {
+    width: 50px;
+    height: 2px;
+    background-color: #f00;
+    position: absolute;
+    top: 300px;
+    left: 684px;
+}
+
+.screen-3_subheading {
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    top: 322px;
+    left: 684px;
+}
+
+#screen-3_all-course {
+    opacity: 0;
+}
+
+.screen-3_course {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 25px;
+    line-height: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.screen-3_course_html {
+    border: 4px solid #02b0ff;
+    color: #02b0ff;
+}
+
+.screen-3_course_php {
+    border: 4px solid #4372fd;
+    color: #4372fd;
+}
+
+.screen-3_course_java {
+    border: 4px solid #ff584c;
+    color: #ff584c;
+}
+
+.screen-3_course_python {
+    border: 4px solid #22c7e5;
+    color: #22c7e5;
+}
+
+.screen-3_course_nodejs {
+    border: 4px solid #509e56;
+    color: #509e56;
+}
+
+
+/* 第四屏样式 */
+
+.screen-4 {
+    height: 640px;
+    background-color: #f3f5f7;
+    overflow: hidden;
+}
+
+.screen-4_wrap {
+    width: 1200px;
+    height: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.screen-4_heading {
+    color: #07111b;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.screen-4_line {
+    width: 50px;
+    height: 2px;
+    background-color: #f00;
+    margin: 30px auto 0;
+}
+
+.screen-4_subheading {
+    color: #07111b;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.screen-4_img {
+    width: 1200px;
+    height: 150px;
+    position: absolute;
+    bottom: 210px;
+}
+
+.screen-4_img_list {
+    width: 200px;
+    height: 116px;
+    float: left;
+    position: relative;
+    margin-left: 80px;
+}
+
+.screen-4_img_list01 {
+    background: url(../img/sc4-1.png) no-repeat center top;
+}
+
+.screen-4_img_list02 {
+    background: url(../img/sc4-2.png) no-repeat center top;
+}
+
+.screen-4_img_list03 {
+    background: url(../img/sc4-3.png) no-repeat center top;
+}
+
+.screen-4_img_list04 {
+    background: url(../img/sc4-4.png) no-repeat center top;
+}
+
+.screen-4_img_list_des {
+    width: 200px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* 第五屏样式 */
+
+.screen-5 {
+    height: 640px;
+    background: url(../img/sc5.jpg) no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.screen-5_wrap {
+    width: 1200px;
+    height: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.screen-5_img {
+    width: 200px;
+    height: 200px;
+    background: url(../img/sc5-1.png) no-repeat center;
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.screen-5_heading {
+    width: 1200px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 350px;
+}
+
+.screen-5_line {
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 425px;
+    left: 50%;
+    margin-left: -25px;
+}
+
+.screen-5_subheading {
+    width: 1200px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    top: 450px;
+}
+
+
+/* 第六屏样式 */
+
+.screen-6 {
+    height: 200px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.screen-6_button {
+    width: 238px;
+    height: 58px;
+    border: 1px solid #707070;
+    border-radius: 3px;
+    margin: 70px auto;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+.screen-6_button:hover {
+    color: #f00;
+}
+
+
+/* 页脚样式 */
+
+.footer {
+    height: 100px;
+    background-color: #000;
+}
+
+.footer_link {
+    width: 834px;
+    margin: 0 auto;
+}
+
+.footer_link a {
+    display: inline-block;
+    color: #c8cdd2;
+    padding: 22px 17px 12px;
+}
+
+.footer_link a:hover {
+    color: #f00;
+}
+
+.footer_copyright {
+    width: 834px;
+    color: #787d82;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* 侧边导航栏样式 */
+
+.outline {
+    width: 40px;
+    height: 204px;
+    position: fixed;
+    right: 0;
+    bottom: 120px;
+    background-color: #fff;
+    padding: 5px 10px;
+    box-shadow: 0 0 10px #787d82;
+}
+
+.outline-item {
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #c8cdd2;
+}
+
+.outline-item:last-child {
+    border: none;
+}
+
+.outline-item_status_active i {
+    color: #f00;
+}
+
+.outline-item i:hover {
+    color: #f00;
+}

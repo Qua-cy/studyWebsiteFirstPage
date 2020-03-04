@@ -1,0 +1,410 @@
+/* 第一屏动画 */
+
+
+/* .screen-1_heading {
+    transition: all 1s;
+}
+
+.header,
+.screen-1_subheading {
+    transition: all 1s .5s;
+} */
+
+.header_animate_init {
+    transform: translate(0, -100%);
+}
+
+.screen-1_heading_animate_init,
+.screen-1_subheading_animate_init {
+    opacity: 0;
+    transform: translate(0, 100%);
+}
+
+.header_animate_done,
+.screen-1_heading_animate_done {
+    transition: all 1s;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.screen-1_subheading_animate_done {
+    transition: all 1s 1s;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+/* 第二屏动画 */
+
+.screen-2_heading_animate_init,
+.screen-2_subheading_animate_init {
+    opacity: 0;
+    transform: translate(0, 100%);
+}
+
+.screen-2_line_animate_init,
+.screen-2_people_animate_init {
+    opacity: 0;
+}
+
+.screen-2_heading_animate_done {
+    transition: all 1s;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.screen-2_subheading_animate_done {
+    transition: all 1s 1s;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.screen-2_line_animate_done {
+    transition: all 1s 1s;
+    opacity: 1;
+}
+
+.screen-2_people_animate_done {
+    transition: all 1s 1.5s;
+    opacity: 1;
+}
+
+
+/* 小火箭动画 */
+
+.screen-2_rocket {
+    opacity: 0;
+    animation: bounce .5s 2.5s forwards;
+}
+
+@keyframes bounce {
+    0% {
+        opacity: 0;
+        transform: translate(0, 100%);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, -10%);
+    }
+    75% {
+        opacity: 1;
+        transform: translate(0, 10%);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(0, -5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+
+/* 第三屏动画 */
+
+.screen-3_decorate_animate_init {
+    transform: scale(0.5);
+    opacity: 0;
+}
+
+.screen-3_heading_animate_init,
+.screen-3_subheading_animate_init {
+    opacity: 0;
+    transform: translate(0, 100%);
+}
+
+.screen-3_line_animate_init {
+    opacity: 0;
+}
+
+.screen-3_decorate_animate_done {
+    transition: all .5s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.screen-3_heading_animate_done {
+    transition: all 1s;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.screen-3_subheading_animate_done {
+    transition: all 1s .5s;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.screen-3_line_animate_done {
+    transition: all 1s .5s;
+    opacity: 1;
+}
+
+
+/* 五个课程动画 */
+
+.screen-3_all-course {
+    height: 78px;
+    position: absolute;
+    bottom: 60px;
+    right: 0px;
+    opacity: 0;
+    animation: bounce02 .5s 2s forwards;
+}
+
+@keyframes bounce02 {
+    0% {
+        opacity: 0;
+        transform: translate(0, 100%);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, -10%);
+    }
+    75% {
+        opacity: 1;
+        transform: translate(0, 10%);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(0, -5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+
+/* 五个课程呼吸灯 */
+
+.screen-3_course {
+    opacity: 1;
+    animation: course 2s ease-in-out infinite;
+}
+
+@keyframes course {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* 五个课程仅边框具有呼吸灯效果的写法,请老师评定是否可行 */
+
+
+/* .screen-3_course_html {
+    border: 4px solid rgba(2, 176, 255, 1);
+    animation: course01 2s ease-in-out infinite;
+}
+
+.screen-3_course_php {
+    border: 4px solid rgba(67, 114, 253, 1);
+    animation: course02 2s ease-in-out infinite;
+}
+
+.screen-3_course_java {
+    border: 4px solid rgba(255, 88, 76, 1);
+    animation: course03 2s ease-in-out infinite;
+}
+
+.screen-3_course_python {
+    border: 4px solid rgba(34, 199, 229, 1);
+    animation: course04 2s ease-in-out infinite;
+}
+
+.screen-3_course_nodejs {
+    border: 4px solid rgba(80, 158, 86, 1);
+    animation: course05 2s ease-in-out infinite;
+}
+
+@keyframes course01 {
+    0%,
+    100% {
+        border: 4px solid rgba(2, 176, 255, .3);
+    }
+    50% {
+        border: 4px solid rgba(2, 176, 255, 1);
+    }
+}
+
+@keyframes course02 {
+    0%,
+    100% {
+        border: 4px solid rgba(67, 114, 253, .3);
+    }
+    50% {
+        border: 4px solid rgba(67, 114, 253, 1);
+    }
+}
+
+@keyframes course03 {
+    0%,
+    100% {
+        border: 4px solid rgba(255, 88, 76, .3);
+    }
+    50% {
+        border: 4px solid rgba(255, 88, 76, 1);
+    }
+}
+
+@keyframes course04 {
+    0%,
+    100% {
+        border: 4px solid rgba(34, 199, 229, .3);
+    }
+    50% {
+        border: 4px solid rgba(34, 199, 229, 1);
+    }
+}
+
+@keyframes course05 {
+    0%,
+    100% {
+        border: 4px solid rgba(80, 158, 86, .3);
+    }
+    50% {
+        border: 4px solid rgba(80, 158, 86, 1);
+    }
+} */
+
+
+/* 第四屏动画 */
+
+.screen-4_heading_animate_init,
+.screen-4_subheading_animate_init {
+    opacity: 0;
+    transform: translate(0, 100%);
+}
+
+.screen-4_line_animate_init {
+    opacity: 0;
+}
+
+.screen-4_img_list01_animate_init,
+.screen-4_img_list02_animate_init,
+.screen-4_img_list03_animate_init,
+.screen-4_img_list04_animate_init {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.screen-4_img_list01_animate_done,
+.screen-4_img_list02_animate_done,
+.screen-4_img_list03_animate_done,
+.screen-4_img_list04_animate_done {
+    transition: all 1s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.screen-4_heading_animate_done {
+    transition: all 1s;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.screen-4_subheading_animate_done {
+    transition: all 1s 1s;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.screen-4_line_animate_done {
+    transition: all 1s 1s;
+    opacity: 1;
+}
+
+
+/* 第五屏动画 */
+
+.screen-5_img_animate_init {
+    transform: scale(.3);
+    opacity: 0;
+}
+
+.screen-5_heading_animate_init,
+.screen-5_line_animate_init,
+.screen-5_subheading_animate_init {
+    transform: translate(0, 100%);
+    opacity: 0;
+}
+
+.screen-5_img_animate_done {
+    transition: all .5s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.screen-5_heading_animate_done {
+    transition: all 1s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.screen-5_line_animate_done,
+.screen-5_subheading_animate_done {
+    transition: all 1s 1s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+
+/* 导航栏样式改变及侧边导航栏出现和隐藏动画 */
+
+.header {
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 1s;
+}
+
+.header_status_change {
+    background-color: rgba(255, 255, 255, .5)
+}
+
+.header_logo i {
+    color: #fff;
+}
+
+.header_logo_status_change i {
+    color: #000;
+}
+
+.header_nav .header_nav-item {
+    color: #fff;
+}
+
+.header_nav .header_nav-item_status_active {
+    color: #f00;
+}
+
+.header_nav_status_change .header_nav-item {
+    color: #000;
+}
+
+.header_nav_status_change .header_nav-item_status_active {
+    color: #f00;
+}
+
+.header_nav_status_change .header_nav-item_study_button {
+    color: #fff;
+}
+
+.outline {
+    transition: all 1s;
+    opacity: 0;
+    transform: translate(100%, 0);
+}
+
+.outline_status_in {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.header_nav-item_status_active {
+    color: #f00;
+}
